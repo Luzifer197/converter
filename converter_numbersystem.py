@@ -26,7 +26,19 @@ def binär_to_hexa(binär: str) -> str:
     
 def hexa_to_binär(hexa: str) -> int:
     try:
-        binär: int = bin(hexa).replace("0b", "")
+        if hexa.lower() == "a":
+            hexa = "10"
+        if hexa.lower() == "b":
+            hexa = "11"
+        if hexa.lower() == "c":
+            hexa = "12"
+        if hexa.lower() == "d":
+            hexa = "13"
+        if hexa.lower() == "e":
+            hexa = "14"
+        if hexa.lower() == "f":
+            hexa = "15"
+        binär: int = bin(int(hexa)).replace("0b", "")
         return int(binär)
     except ValueError:
         print (f"ValueError, The Value {hexa} is uncorrecly in binär!!")
