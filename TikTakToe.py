@@ -37,7 +37,7 @@ while playing:
 
             turn += 1
             spots[int(choice)] = check_turn(turn) 
-    
+                
     if check_for_win(spots):
         playing = False
         complete = True

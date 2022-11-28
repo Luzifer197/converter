@@ -25,4 +25,3 @@ def check_for_win(spots):
 def ki_playing(turn: int) -> int:
     if check_turn(turn) == "X":
         return randint(1, 9)
-
