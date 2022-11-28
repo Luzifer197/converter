@@ -8,7 +8,9 @@ complete = False
 turn = 0
 prev_turn = -1
 ki = input("vs Computer, vs player?     ").lower()
+mode = input("normal, medium, hardcore ").lower()
 ki    
+mode
 while playing:
     
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -23,8 +25,8 @@ while playing:
         choice = input("type you move:  ")
     elif ki == "vs computer":
         if check_turn(turn) == "X": 
-            choice = ki_playing(turn)
-            print(f"Player {str((turn%2) + 1)}\'s pickt {turn}")
+            choice = ki_playing(spots, mode)
+            print(f"Player {str((turn%2) + 1)}\'s pickt {choice}")
         
         elif check_turn(turn) == "O":
             print(f"Player {str((turn%2) + 1)}\'s turn: Pick your spot or press q to quit:")
