@@ -7,8 +7,8 @@ playing = True
 complete = False
 turn = 0
 prev_turn = -1
-ki = input("vs Computer, vs player?     ").lower()
-mode = input("normal, medium, hardcore ").lower()
+ki = input("\nvs Computer, vs player?     ").lower()
+mode = input("\nnormal, medium, hardcore:        ").lower()
 ki    
 mode
 while playing:
