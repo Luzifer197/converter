@@ -1,4 +1,4 @@
-from Functionen_ttt import draw_board, check_turn, check_for_win
+from Functionen_ttt import draw_board, check_turn, check_for_win, ki_playing
 import os
 
 spots:dict[str] = {1: "1", 2 : "2", 3: "3", 4: "4", 5: "5", 6: "6", 7: "7", 8: "8", 9: "9"}
@@ -7,7 +7,8 @@ playing = True
 complete = False
 turn = 0
 prev_turn = -1
-
+ki = input("vs Computer, vs player?     ").lower()
+ki    
 while playing:
     
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -17,12 +18,21 @@ while playing:
         print("invalid spot selected, please pick another spot")
     prev_turn = turn
 
-    print(f"Player {str((turn%2) + 1)}\'s turn: Pick your spot or press q to quit:")
-    
-    choice = input()
+    if ki == "vs player":
+        print(f"Player {str((turn%2) + 1)}\'s turn: Pick your spot or press q to quit:")
+        choice = input("type you move:  ")
+    elif ki == "vs computer":
+        if check_turn(turn) == "X": 
+            choice = ki_playing(turn)
+            print(f"Player {str((turn%2) + 1)}\'s pickt {turn}")
+        
+        elif check_turn(turn) == "O":
+            print(f"Player {str((turn%2) + 1)}\'s turn: Pick your spot or press q to quit:")
+            choice = input("type you move:  ")
+
     if choice == "q":
         playing = False
-    elif str.isdigit(choice) and int(choice) in spots:
+    elif str.isdigit(str(choice)) and int(choice) in spots:
         if not spots[int(choice)] in {"X", "O"}:
 
             turn += 1

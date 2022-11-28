@@ -1,3 +1,5 @@
+from random import randint
+
 def draw_board(spots: dict[str]):
     board = f" {spots[1]} | {spots[2]} | {spots[3]} \n {spots[4]} | {spots[5]} | {spots[6]} \n {spots[7]} | {spots[8]} | {spots[9]} "
     
@@ -19,3 +21,8 @@ def check_for_win(spots):
         return True
     else:
         return False
+
+def ki_playing(turn: int) -> int:
+    if check_turn(turn) == "X":
+        return randint(1, 9)
+
