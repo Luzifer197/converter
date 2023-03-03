@@ -5,7 +5,7 @@ def binär_to_decimal(binär: str) -> int:
         return dec
     except ValueError:
         print (f"ValueError, The Value {binär} is uncorrecly in decimal!!")
-        exit()    
+  
 
 def decimal_to_binär(decimal: str) -> int:
     try:
@@ -13,7 +13,6 @@ def decimal_to_binär(decimal: str) -> int:
         return int(binär)
     except ValueError:
         print (f"ValueError, The Value {decimal} is uncorrecly in binär!!")
-        exit()
 
 def binär_to_hexa(binär: str) -> str:
     try:
@@ -22,8 +21,7 @@ def binär_to_hexa(binär: str) -> str:
 
     except ValueError:
         print (f"ValueError, The Value {binär} is uncorrecly in Hexa!!")
-        exit()
-    
+
 def hexa_to_binär(hexa: str) -> int:
     try:
         if hexa.lower() == "a":
@@ -42,7 +40,6 @@ def hexa_to_binär(hexa: str) -> int:
         return int(binär)
     except ValueError:
         print (f"ValueError, The Value {hexa} is uncorrecly in binär!!")
-        exit()
 
 def decimal_to_hexa(decimal: int) -> str:      #convert Decimalnumber to Hexanumber
     conversion_table_16_to_10: dict[str, int] = {0: "0", 1: "1", 2: "2" ,3:"3" ,4:"4" ,5:"5" ,6:"6" ,7:"7" ,8:"8" ,9 :"9" ,10:"A" ,11:"B" ,12:"C" ,13:"D" ,14:"E" ,15:"F"}
